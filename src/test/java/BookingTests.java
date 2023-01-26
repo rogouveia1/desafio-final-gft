@@ -19,7 +19,6 @@ import static io.restassured.config.LogConfig.logConfig;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.lessThan;
-import static sun.jvm.hotspot.utilities.AddressOps.greaterThan;
 
     public class BookingTests {
         public static Faker faker;
@@ -73,7 +72,7 @@ import static sun.jvm.hotspot.utilities.AddressOps.greaterThan;
         public void getAllBookingsByUserFirstName_BookingExists_returnOk() {
             request
                     .when()
-                    .queryParam("firstName", "Carol")
+                    .queryParam("firstName", "Rosana")
                     .get("/booking")
                     .then()
                     .assertThat()
@@ -101,4 +100,4 @@ import static sun.jvm.hotspot.utilities.AddressOps.greaterThan;
                     .jsonPath()
             ;
         }
-};
+}
